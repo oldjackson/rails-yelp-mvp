@@ -1,0 +1,29 @@
+<div class="container">
+  <div style="display: flex; justify-content: space-between;">
+    <h1><%= @restaurant.name %></h1>
+    <%= button_to "Edit", edit_restaurant_path,
+    :class => "glyphicon glyphicon-edit", :method => :get %>
+  </div>
+
+  <div>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+  </div>
+
+  <div>
+    <h3>Reviews</h3>
+    <% @restaurant.reviews.each do  |review| %>
+
+    <div>
+      <%= review.rating %> - <%= review.content %>
+    </div>
+
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+  </div>
+  <div>
+    <%= link_to "Back to index", restaurants_path %>
+  </div>
+</div>
