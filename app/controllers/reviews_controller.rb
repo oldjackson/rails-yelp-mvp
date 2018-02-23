@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(params[:restaurant_id]) # :restaurant_id is added by the 2-arguments simple_form in views/reviews/_form
     @review.restaurant = @restaurant
     if @review.save
       redirect_to restaurant_path(@restaurant)

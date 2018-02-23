@@ -1,6 +1,6 @@
+<!-- Creates a POST request to /restaurant/:restaurant_id/reviews; adds the corresponding restaurant_id to the params -->
 <%= simple_form_for([@restaurant, @review]) do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
-
   <%= f.submit "Add", class: 'btn btn-primary' %>
 <% end %>

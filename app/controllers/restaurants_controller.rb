@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @review = Review.new
+    @review = Review.new # needed to show the review addition form along with the existing restaurant data in the view
     @restaurant = Restaurant.find(params[:id])
   end
 
